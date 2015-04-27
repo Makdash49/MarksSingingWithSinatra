@@ -72,4 +72,7 @@ get '/:id/complete' do
   redirect '/'
 end
 
-# Let's see if I can add this branch.
+get '/rss.xml' do
+    @notes = Note.all :order => :id.desc
+    builder :rss
+end
