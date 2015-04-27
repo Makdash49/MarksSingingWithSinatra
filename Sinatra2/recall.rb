@@ -3,6 +3,9 @@ require 'dm-sqlite-adapter'
 require 'sinatra'
 require 'data_mapper'
 
+SITE_TITLE = "Recall"
+SITE_DESCRIPTION = "'cause you're too busy to remember"
+
 DataMapper.setup(:default, 'sqlite:recall.db')
 
 class Note
