@@ -52,6 +52,12 @@ get '/:id/delete' do
   erb :delete
 end
 
+delete '/:id' do
+  n = Note.get params[:id]
+  n.destroy
+  redirect '/'
+end
+
 get '/:id/complete' do
   n = Note.get params[:id]
   n.complete = n.complete ? 0 : 1 # flip it
