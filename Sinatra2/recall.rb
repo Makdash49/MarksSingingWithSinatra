@@ -1,7 +1,18 @@
 require 'dm-sqlite-adapter'
-
 require 'sinatra'
 require 'data_mapper'
+
+
+require 'rack-flash'
+require 'sinatra/redirect_with_flash'
+
+enable :sessions
+use Rack::Flash, :sweep => true
+
+
+
+
+
 
 SITE_TITLE = "Recall"
 SITE_DESCRIPTION = "'cause you're too busy to remember"
